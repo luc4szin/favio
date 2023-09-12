@@ -14,7 +14,13 @@ function App() {
       />
       ;
       <Conteudo />;
-      <Rodape facebook="icone-facebook.png" />;
+      <Rodape
+        facebook="icone-facebook.png"
+        instagram="icone-instagram.png"
+        twitter="icone-twitter.png"
+        data=""
+      />
+      ;
     </>
   );
 }

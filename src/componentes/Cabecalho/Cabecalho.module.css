@@ -1,18 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 .cabecalho {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
+  background-color: #2a2a35;
+  padding: 10px 0px 10px 0px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 5%;
 }
 
 .titulo {
+  display: flex;
+  align-self: center;
+  color: white;
   font-size: 3rem;
-  color: chocolate;
-  background-color: black;
 }
 
 .subtitulo {
+  display: flex;
+  align-self: center;
   font-size: 2rem;
-}
-
-.rodape {
-  
+  color: white;
 }

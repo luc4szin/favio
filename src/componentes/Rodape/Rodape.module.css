@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  background-color: #2a2a35;
+  width: 100%;
+}
+
+.facebook {
+  display: flex;
+  align-self: center;
+  width: 6%;
+}
+
+.instagram {
+  display: flex;
+  align-self: center;
+  width: 7%;
+}
+
+.twitter {
+  display: flex;
+  align-self: center;
+  width: 5.2%;
+}
+
+.data {
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  font-size: 2rem;
+  color: white;
+}
