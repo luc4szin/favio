@@ -1,9 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./Conteudo.module.css";
 
-export default function index() {
-  return <div>index</div>;
-}
+const Conteudo = () => {
+  const [nomeSite, setNomeSite] = useState("");
+  const [url, setUrl] = useState("");
+  const [favoritos, setFavoritos] = useState([]);
 
-export function OlaMundo() {
-  console.log("ola mundo");
-}
+  function salvarFavorito() {
+    setFavoritos([...favoritos, { nomeSite, url }]);
+    console.log(favoritos);
+    localStorage.setItem("favorito", JSON.stringify(favoritos));
+  }
+
+  return (
+    <>
+      <ul>
+        {favoritos[0] != undefined &&
+          favoritos.map((favorito) => (
+            <li>
+              {favorito.nomeSite} : {favorito.url}
+            </li>
+          ))}
+      </ul>
+      <div className={styles.area}>
+        <h1>Conteudo</h1>
+        <form className={styles.formulario}>
+          <label>Nome do Site </label>
+          <h1>{nomeSite}</h1>
+          <br />
+          <input
+            name="nome_site"
+            onChange={(evento) => {
+              setNomeSite(evento.target.value);
+              console.log(nomeSite);
+            }}
+          ></input>
+          <br />
+          <label> URL </label>
+          <h1>{url}</h1>
+          <br />
+          <input
+            type="url"
+            name="url"
+            onChange={(evento) => {
+              setUrl(evento.target.value);
+              console.log(url);
+            }}
+          ></input>
+          <br />
+          <input
+            type="button"
+            value="Salvar"
+            onClick={() => salvarFavorito()}
+          />
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default Conteudo;
