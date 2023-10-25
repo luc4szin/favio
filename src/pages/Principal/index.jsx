@@ -6,18 +6,7 @@ import Rodape from "../../componentes/Rodape";
 const Principal = () => {
   return (
     <>
-      <Cabecalho
-        logo="logo192.png"
-        titulo="Fav.io"
-        subtitulo="O melhor gerenciador de favoritos"
-      />
       <Conteudo />
-      <Rodape
-        facebook="icone-facebook.png"
-        instagram="icone-instagram.png"
-        twitter="icone-twitter.png"
-        data=""
-      />
     </>
   );
 };

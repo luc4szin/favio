@@ -4,12 +4,14 @@ import styles from "./Conteudo.module.css";
 const Conteudo = () => {
   const [nomeSite, setNomeSite] = useState("");
   const [url, setUrl] = useState("");
+  const [importante, setImportante] = useState(false);
   const [favoritos, setFavoritos] = useState([]);
 
   function salvarFavorito() {
-    setFavoritos([...favoritos, { nomeSite, url }]);
-    console.log(favoritos);
-    localStorage.setItem("favorito", JSON.stringify(favoritos));
+    favoritos.push({ nomeSite, url, importante });
+    setFavoritos([...favoritos]);
+    console.log("favoritos>>", favoritos);
+    localStorage.setItem("Favoritos", JSON.stringify(favoritos));
   }
 
   return (
@@ -17,10 +19,11 @@ const Conteudo = () => {
       <ul>
         {favoritos[0] != undefined &&
           favoritos.map((favorito) => (
-            <li>
+            <li style={favorito.importante ? { color: "red" } : {}}>
               {favorito.nomeSite} : {favorito.url}
             </li>
           ))}
+        ;
       </ul>
       <div className={styles.area}>
         <h1>Conteudo</h1>
@@ -47,6 +50,13 @@ const Conteudo = () => {
               console.log(url);
             }}
           ></input>
+          <br />
+          <input
+            type="checkbox"
+            name="checkbox"
+            onChange={(evento) => setImportante(!importante)}
+          ></input>
+          <label htmlFor="checkbox"> Importante</label>
           <br />
           <input
             type="button"

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Cabecalho.module.css";
+import Menu from "../Menu";
 
 export default function Cabecalho(props) {
   return (
@@ -9,6 +10,7 @@ export default function Cabecalho(props) {
       <p className={`${styles.titulo} ${styles.subtitulo}`}>
         {props.subtitulo}
       </p>
+      <Menu />
     </div>
   );
 }
